@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аксесуари - BokoKomp</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="auth.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="containers">
+            <a href="index.html">
+                <img src="logo.png" alt="Логотип" class="logo">
+            </a>
+            <div class="text">
+                <h1>Аксесуари</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="configurator.html" class="nav-link">Конфігуратор</a>
+        <a href="contact.html" class="nav-link">Контакти</a>
+        <a href="basket.html" class="nav-link">Корзина</a>
+        
+        <a href="login.html" id="login-button" class="nav-link">Увійти</a>
+<div class="user-menu">
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="#" id="logout-button" class="nav-link">Вийти</a>
+    </div>
+</div>
+    </nav>
+    
+    <nav class="category-nav">
+        <a href="computers.html" class="nav-link">Комп'ютери</a>
+        <a href="components.html" class="nav-link">Аксесуари</a>
+        <a href="componenty.html" class="nav-link">Комплектуючі</a>
+    </nav>
+
+    <div class="container">
+        <section class="product-list">
+            <div class="product">
+                <h3>Миша</h3>
+                <img src="P2.png" alt="Миша HATOR Stellar Pro Wireless">
+                <p>HATOR Stellar Pro Wireless</p>
+                <p>Ціна: 2,999 грн</p>
+                <button onclick="addToCart('HATOR Stellar Pro Wireless', 2999)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Клавіатура</h3>
+                <img src="P3.png" alt="Клавіатура HATOR Gravity X TKL">
+                <p>HATOR Gravity X TKL</p>
+                <p>Ціна: 1,999 грн</p>
+                <button onclick="addToCart('HATOR Gravity X TKL', 1999)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Мікрофон</h3>
+                <img src="P4.png" alt="Мікрофон HATOR Dreamcast RGB">
+                <p>HATOR Dreamcast RGB</p>
+                <p>Ціна: 4,999 грн</p>
+                <button onclick="addToCart('HATOR Dreamcast RGB', 4999)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Навушники</h3>
+                <img src="P5.png" alt="Навушники HATOR Phoenix Wireless Tri-mode">
+                <p>HATOR Phoenix Wireless Tri-mode</p>
+                <p>Ціна: 4,399 грн</p>
+                <button onclick="addToCart('HATOR Phoenix Wireless Tri-mode', 4399)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Ігрове крісло</h3>
+                <img src="P6.png" alt="Ігрове крісло HATOR Ironsky">
+                <p>HATOR Ironsky Fabric back to 80th L.E.</p>
+                <p>Ціна: 11,999 грн</p>
+                <button onclick="addToCart('HATOR Ironsky Fabric back to 80th L.E.', 11999)">Додати в корзину</button>
+            </div>
+    </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>BokoKomp &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    header .containers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    header .text h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    
+    .logo {
+      width: 80px;
+      height: auto;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        color: white;
+        margin: 0;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #333;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    
+    .nav-link:hover {
+        background-color: #575757;
+    }
+    
+    .user-menu {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+    }
+    
+    #login-button {
+      background-color: #333;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      width: 80px;
+      max-height: 150px;
+      overflow-y: auto;
+      top: 50px;
+    }
+    
+    .dropdown-menu a {
+      color: black;
+      padding: 5px 10px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-menu a:hover {
+      background-color: #f1f1f1;
+    }
+    
+    .product-list {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .product {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 15px;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .product img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .product h3 {
+        font-size: 1.5rem;
+        color: #444;
+        margin-bottom: 10px;
+    }
+    
+    .product p {
+        font-size: 1rem;
+        color: #666;
+        margin: 5px 0;
+    }
+    
+    .product button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .product button:hover {
+        background-color: #575757;
+    }
+    
+    .product:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .fly-animation {
+        position: absolute;
+        z-index: 9999;
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        pointer-events: none;
+        animation: fly-to-cart 1s ease-in-out forwards;
+        background-size: cover;
+    }
+    
+    @keyframes fly-to-cart {
+        0% {
+            transform: scale(1) translate(0, 0);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.2) translate(20px, -20px);
+            opacity: 0.8;
+        }
+        100% {
+            transform: scale(0.5) translate(calc(100vw - 100px), -50px);
+            opacity: 0;
+        }
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+    }
+    
+    footer p {
+        font-size: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    
+        nav {
+            width: 100%;
+            justify-content: flex-start;
+        }
+    
+        .nav-link {
+            font-size: 1rem;
+            padding: 8px 12px;
+        }
+    
+        .product-list {
+            grid-template-columns: 1fr;
+        }
+    
+        .product {
+            margin-bottom: 20px;
+        }
+    }
+    
+    </style>
+    
+    
+    <script>
+        function addToCart(name, price) {
+         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+         
+
+         const productImage = event.target.closest('.product').querySelector('img');
+         
+
+         cart.push({ name, price, image: productImage.src });
+         localStorage.setItem('cart', JSON.stringify(cart));
+     
+ 
+         const button = event.target;
+         const flyImage = document.createElement('div');
+         flyImage.classList.add('fly-animation');
+     
+  
+         flyImage.style.backgroundImage = `url(${productImage.src})`;
+     
+         const buttonRect = button.getBoundingClientRect();
+         flyImage.style.left = `${buttonRect.left + window.scrollX + buttonRect.width / 2 - 20}px`;
+         flyImage.style.top = `${buttonRect.top + window.scrollY + buttonRect.height / 2 - 20}px`;
+     
+         document.body.appendChild(flyImage);
+     
+         const cartIcon = document.getElementById('cart-icon');
+         const cartRect = cartIcon.getBoundingClientRect();
+     
+         const style = document.createElement('style');
+         style.innerHTML = `
+             @keyframes fly-to-cart {
+                 0% {
+                     transform: translate(0, 0) scale(1);
+                     opacity: 1;
+                 }
+                 50% {
+                     transform: translate(${cartRect.left + window.scrollX - (buttonRect.left + window.scrollX)}px, 
+                                          ${cartRect.top + window.scrollY - (buttonRect.top + window.scrollY)}px) scale(1.2);
+                     opacity: 0.8;
+                 }
+                 100% {
+                     transform: translate(${cartRect.left + window.scrollX - (buttonRect.left + window.scrollX)}px, 
+                                          ${cartRect.top + window.scrollY - (buttonRect.top + window.scrollY)}px) scale(0.5);
+                     opacity: 0;
+                 }
+             }
+         `;
+         document.head.appendChild(style);
+     
+         flyImage.addEventListener('animationend', () => {
+             flyImage.remove();
+             style.remove();
+         });
+     }
+    
+    
+    
+    
+     </script>
+     
+    
+    

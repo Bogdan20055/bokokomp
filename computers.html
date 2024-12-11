@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комп'ютери - BokoKomp</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="auth.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <div class="containers">
+            <a href="index.html">
+                <img src="logo.png" alt="Логотип" class="logo">
+            </a>
+            <div class="text">
+                <h1>Комп'ютери</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="configurator.html" class="nav-link">Конфігуратор</a>
+        <a href="contact.html" class="nav-link">Контакти</a>
+        <a href="basket.html" class="nav-link" id="cart-icon">Корзина</a>
+
+    
+        <a href="login.html" id="login-button" class="nav-link">Увійти</a>
+<div class="user-menu">
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="#" id="logout-button" class="nav-link">Вийти</a>
+    </div>
+</div>
+
+    </nav>
+
+
+
+    <nav>
+        <a href="computers.html" class="nav-link">Комп'ютери</a>
+        <a href="components.html" class="nav-link">Аксесуари</a>
+        <a href="componenty.html" class="nav-link">Комплектуючі</a>
+    </nav>
+
+    <div class="container">
+        <section class="product-list">
+            <div class="product">
+                <h3>Універсальний ПК1</h3>
+                <img src="P1.jpg" alt="Геймерський ПК">
+                <p>Ідеальний вибір для дому та роботи.</p>
+                <p>Характеристики:</p>
+                <p>Процесор: Intel Core i5-12400F</p>
+                <p>Оперативна пам'ять: 16 ГБ DDR4 3200 МГц</p>
+               <p>Накопичувач: NVMe M.2 PCIe Gen4 x4 512 ГБ</p>
+                <p>Відеокарта: NVIDIA GeForce RTX 3050</p>
+                <p>Операційна система: Windows 11 Pro</p>
+                <p>Ціна: 25,000 грн</p>
+                <button onclick="addToCart('Універсальний ПК1', 25000)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Офісний ПК1</h3>
+                <img src="P1.jpg" alt="Офісний ПК">
+                <p>Надійний ПК для роботи в офісі.</p>
+                    <p>Характеристики:</p>
+                    <p>Процесор: Intel Core i5 12400</p>
+                    <p>Оперативна пам'ять: 16 ГБ DDR4</p>
+                    <p>Накопичувач: SSD 512 ГБ</p>
+                   <p>Відеокарта: Вбудована в процесор</p> 
+                   <p>Операційна система: Windows 11 Pro</p> 
+                <p>Ціна: 15,000 грн</p>
+                <button onclick="addToCart('Офісний ПК1', 15000)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Геймерський ПК1</h3>
+                <img src="P1.jpg" alt="Універсальний ПК">
+                <p>Потужний ПК для сучасних ігор.</p>
+                <p>Характеристики:</p>
+                <p>Процесор: Intel Core i7-12700K</p>
+                <p>Оперативна пам'ять: 32 ГБ DDR5 4800 МГц</p>
+                <p>Накопичувач: NVMe M.2 PCIe Gen4 x4 1 ТБ</p>
+                <p>Відеокарта: NVIDIA GeForce RTX 3070 Ti</p>
+                <p>Операційна система: Windows 11 Pro</p>
+                <p>Ціна: 35,000 грн</p>
+                <button onclick="addToCart('Геймерський ПК1', 35000)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Універсальний ПК2</h3>
+                <img src="P1.jpg" alt="Універсальний ПК">
+                <p>Ідеальний вибір для дому та роботи.</p>
+                <p>Характеристики:</p>
+                <p>Процесор: AMD Ryzen 5 5600X</p>               
+                <p>Оперативна пам'ять: 16 ГБ DDR4 3200 МГц</p>
+                <p>Накопичувач: NVMe M.2 PCIe Gen4 x4 512 ГБ</p>
+                <p> Відеокарта: AMD Radeon RX 6600</p>
+                <p>Операційна система: Windows 11 Pro</p>
+                <p>Ціна: 25,000 грн</p>
+                <button onclick="addToCart('Універсальний ПК2', 25000)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Офісний ПК2</h3>
+                <img src="P1.jpg" alt="Універсальний ПК">
+                <p>Надійний ПК для роботи в офісі.</p>
+                <p>Характеристики:</p>
+                <p>Процесор: AMD Ryzen 5 5600G</p>
+                <p>Оперативна пам'ять: 16 ГБ DDR4</p>
+                <p>Накопичувач: SSD 512 ГБ</p>
+                <p>Відеокарта: Вбудована Radeon Vega 7</p>
+                <p>Операційна система: Windows 11 Pro</p>
+                <p>Ціна: 15,000 грн</p>
+                <button onclick="addToCart('Офісний ПК2', 15000)">Додати в корзину</button>
+            </div>
+            <div class="product">
+                <h3>Геймерський ПК2</h3>
+                <img src="P1.jpg" alt="Універсальний ПК">
+                <p>Потужний ПК для сучасних ігор.</p>
+                <p>Характеристики:</p>
+                <p>Процесор: AMD Ryzen 9 5900X</p>
+                <p>Оперативна пам'ять: 32 ГБ DDR4 3600 МГц </p>
+                <p>Накопичувач: NVMe M.2 PCIe Gen4 x4 1 ТБ</p>
+                <p>Відеокарта: AMD Radeon RX 6800 XT</p>
+                <p>Операційна система: Windows 11 Pro</p>
+                <p>Ціна: 35,000 грн</p>
+                <button onclick="addToCart('Геймерський ПК2', 5000)">Додати в корзину</button>
+            </div>
+        </section>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <p>BokoKomp &copy; 2024</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+<style>
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .containers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .text h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #333;
+    padding: 10px;
+    gap: 10px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#login-button {
+  background-color: #333;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 80px;
+  max-height: 150px;
+  overflow-y: auto;
+  top: 50px;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.product-list {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #666;
+    margin: 5px 0;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #575757;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fly-animation {
+    position: absolute;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    pointer-events: none;
+    animation: fly-to-cart 1s ease-in-out forwards;
+    background-size: cover;
+}
+
+@keyframes fly-to-cart {
+    0% {
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) translate(20px, -20px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0.5) translate(calc(100vw - 100px), -50px);
+        opacity: 0;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .product {
+        margin-bottom: 20px;
+    }
+}
+
+</style>
+
+<script>
+    function addToCart(name, price) {
+     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+     
+
+     const productImage = event.target.closest('.product').querySelector('img');
+     
+
+     cart.push({ name, price, image: productImage.src });
+     localStorage.setItem('cart', JSON.stringify(cart));
+ 
+
+     const button = event.target;
+     const flyImage = document.createElement('div');
+     flyImage.classList.add('fly-animation');
+ 
+
+     flyImage.style.backgroundImage = `url(${productImage.src})`;
+ 
+     const buttonRect = button.getBoundingClientRect();
+     flyImage.style.left = `${buttonRect.left + window.scrollX + buttonRect.width / 2 - 20}px`;
+     flyImage.style.top = `${buttonRect.top + window.scrollY + buttonRect.height / 2 - 20}px`;
+ 
+     document.body.appendChild(flyImage);
+ 
+     const cartIcon = document.getElementById('cart-icon');
+     const cartRect = cartIcon.getBoundingClientRect();
+ 
+     const style = document.createElement('style');
+     style.innerHTML = `
+         @keyframes fly-to-cart {
+             0% {
+                 transform: translate(0, 0) scale(1);
+                 opacity: 1;
+             }
+             50% {
+                 transform: translate(${cartRect.left + window.scrollX - (buttonRect.left + window.scrollX)}px, 
+                                      ${cartRect.top + window.scrollY - (buttonRect.top + window.scrollY)}px) scale(1.2);
+                 opacity: 0.8;
+             }
+             100% {
+                 transform: translate(${cartRect.left + window.scrollX - (buttonRect.left + window.scrollX)}px, 
+                                      ${cartRect.top + window.scrollY - (buttonRect.top + window.scrollY)}px) scale(0.5);
+                 opacity: 0;
+             }
+         }
+     `;
+     document.head.appendChild(style);
+ 
+     flyImage.addEventListener('animationend', () => {
+         flyImage.remove();
+         style.remove();
+     });
+ }
+ </script>
+ 
+

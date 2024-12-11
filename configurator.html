@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конфігуратор ПК - BokoKomp</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <script src="auth.js"></script>
+
+</head>
+<body>
+
+ 
+        <header>
+            <div class="containers">
+                <a href="index.html">
+                    <img src="logo.png" alt="Логотип" class="logo">
+                </a>
+                <div class="text">
+                    <h1>Конфігуратор ПК</h1>
+                    <h4>Збери свій ПК мрії</h4>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+    <nav>
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="configurator.html" class="nav-link">Конфігуратор</a>
+        <a href="contact.html" class="nav-link">Контакти</a>
+        <a href="basket.html" class="nav-link">Корзина</a>
+        <a href="login.html" id="login-button" class="nav-link">Увійти</a>
+<div class="user-menu">
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="#" id="logout-button" class="nav-link">Вийти</a>
+    </div>
+</div>
+
+    </nav>
+
+    <div class="container">
+        <div class="component">
+            <select id="cpu" onchange="calculateTotal()">
+                <option value="0">Виберіть процесор</option>
+                <option value="4000">Intel Core i5 - 4000 грн</option>
+                <option value="7000">Intel Core i7 - 7000 грн</option>
+                <option value="10000">Intel Core i9 - 10000 грн</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <select id="gpu" onchange="calculateTotal()">
+                <option value="0">Виберіть відеокарту</option>
+                <option value="6000">NVIDIA GTX 1660 - 6000 грн</option>
+                <option value="12000">NVIDIA RTX 3060 - 12000 грн</option>
+                <option value="18000">NVIDIA RTX 3080 - 18000 грн</option>
+                <option value="25000">Nvidia Geforse RTX 4060 - 25000 грн</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <select id="ram" onchange="calculateTotal()">
+                <option value="0">Виберіть оперативну пам'ять</option>
+                <option value="1500">8GB DDR4 - 1500 грн</option>
+                <option value="3000">16GB DDR4 - 3000 грн</option>
+                <option value="6000">32GB DDR4 - 6000 грн</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <select id="motherboard" onchange="calculateTotal()">
+                <option value="0">Виберіть материнську плату</option>
+                <option value="4000">Gigabite B450 - 4000 грн</option>
+                <option value="7000">Intel H310M - 7000 грн</option>
+                <option value="10000">MSI B660 - 10000 грн</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <select id="storage" onchange="calculateTotal()">
+                <option value="0">Виберіть накопичувач</option>
+                <option value="4000">Kingston R456 5000 mb - 4000 грн</option>
+                <option value="5000">SSD Samsung 4000 mb - 5000 грн</option>
+            </select>
+        </div>
+
+        <div class="component">
+            <select id="kor" onchange="calculateTotal()">
+                <option value="0">Виберіть корпус</option>
+                <option value="4000">Aerocool NightHawk Duo ARGB czarna - 4000 грн</option>
+                <option value="5000">Корпус без БЖ GAMEMAX Infinity Mini White - 5000 грн</option>
+            </select>
+        </div>
+        
+
+        <div class="bbb">
+            <select id="bbb" onchange="calculateTotal()">
+                <option value="0">Виберіть блок живлення</option>
+                <option value="3049">be quiet! System Power 10 650W - 3049 грн</option>
+                <option value="2249">Chieftec GPS-700A8 700 W - 2249 грн</option>
+            </select>
+        </div>
+        
+
+        <div class="total" id="total">Загальна вартість: 0 грн</div>
+    </div>
+
+    <div id="hello">
+        <section class="hello" id="hi">
+            <h1>Допомога</h1>
+            <p> Ми створили конфігуратор щоб ви могли підібрати те що вам більш до вподоби</p>
+            <h1>Допомогти оформити замовлення</h1>
+            <p>Затефонуйте за номером телефону нижче</p>
+            <p>+38 066 043 4306</p>
+            <h1>Консультація з професіоналом</h1>
+            <p>Затефонуйте за номером телефону нижче</p>
+            <p>+38 066 043 4398</p>
+        </section>
+    </div>
+
+
+    <footer>
+        <p>BokoKomp &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .containers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .text h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header .text h4 {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #ddd;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #333;
+    padding: 10px;
+    gap: 10px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+}
+
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h4 {
+    text-align: center;
+}
+
+.component {
+    margin-bottom: 25px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.total {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.hello {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.hello h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.hello p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#login-button {
+  background-color: #333;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 80px;
+  max-height: 150px;
+  overflow-y: auto;
+  top: 50px;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+
+@media (max-width: 768px) {
+    header .containers {
+        flex-direction: column;
+    }
+
+    header .text h1 {
+        font-size: 24px;
+    }
+
+    header .text h4 {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .hello {
+        padding: 15px;
+    }
+
+    .hello h1 {
+        font-size: 20px;
+    }
+
+    select {
+        font-size: 16px;
+    }
+
+    .total {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        width: 60px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-link {
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    select {
+        font-size: 14px;
+    }
+
+    .total {
+        font-size: 18px;
+    }
+
+    .hello h1 {
+        font-size: 18px;
+    }
+
+    .hello p {
+        font-size: 14px;
+    }
+}
+
+</style>
+
+<script>
+    function calculateTotal() {
+const cpu = parseInt(document.getElementById("cpu").value) || 0;
+const gpu = parseInt(document.getElementById("gpu").value) || 0;
+const ram = parseInt(document.getElementById("ram").value) || 0;
+const motherboard = parseInt(document.getElementById("motherboard").value) || 0;
+const storage = parseInt(document.getElementById("storage").value) || 0;
+const kor = parseInt(document.getElementById("kor").value) || 0;
+const bbb = parseInt(document.getElementById("bbb").value) || 0;
+
+const total = cpu + gpu + ram + motherboard + storage + kor + bbb;
+
+document.getElementById("total").textContent = `Загальна вартість: ${total} грн`;
+}
+
+
+
+
+
+</script>

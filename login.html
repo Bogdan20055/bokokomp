@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вхід та Реєстрація</title>
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+
+    function toggleForm() {
+      document.querySelector('.login-box').classList.toggle('hidden');
+      document.querySelector('.register-box').classList.toggle('hidden');
+    }
+
+
+    function validateEmail(input) {
+      const email = input.value;
+      if (!email.endsWith('@gmail.com')) {
+        input.setCustomValidity('Будь ласка, введіть електронну пошту з доменом @gmail.com');
+      } else {
+        input.setCustomValidity('');
+      }
+    }
+
+    function validatePhone(input) {
+      const phoneRegex = /^(095|066|097|099|068|098)\d{7}$/;
+      if (!phoneRegex.test(input.value)) {
+        input.setCustomValidity('Будь ласка, введіть номер телефону у форматі: 095XXXXXXX');
+      } else {
+        input.setCustomValidity('');
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+
+    <div class="form-box login-box">
+      <h2>Вхід</h2>
+      <form action="login.php" method="post">
+        <label for="login-email">Електронна пошта</label>
+        <input type="email" id="login-email" name="email" required oninput="validateEmail(this)" placeholder="Введіть вашу електронну пошту">
+        
+        <label for="login-password">Пароль</label>
+        <input type="password" id="login-password" name="password" required placeholder="Введіть ваш пароль">
+        
+        <button type="submit" class="btn">Увійти</button>
+      </form>
+      <p class="text-link">Ще не маєш акаунта? <span onclick="toggleForm()" class="link">Зареєструватися</span></p>
+      <p class="text-link"><a href="index.html" class="link">Повернутися на головну</a></p>
+    </div>
+    
+    <div class="form-box register-box hidden">
+      <h2>Реєстрація</h2>
+      <form action="registration.php" method="post">
+        <label for="register-name">Ім'я</label>
+        <input type="text" id="register-name" name="name" required placeholder="Введіть ваше ім'я">
+        
+        <label for="register-email">Електронна пошта</label>
+        <input type="email" id="register-email" name="email" required oninput="validateEmail(this)" placeholder="bogdan@mail.com">
+        
+        <label for="register-phone">Номер телефону</label>
+        <input type="text" id="register-phone" name="phone" required oninput="validatePhone(this)" placeholder="099XXXXXXX">
+        
+        <label for="register-password">Пароль</label>
+        <input type="password" id="register-password" name="password" required placeholder="Введіть ваш пароль">
+        
+        <button type="submit" class="btn">Зареєструватися</button>
+      </form>
+      <p class="text-link">Вже маєш акаунт? <span onclick="toggleForm()" class="link">Увійти</span></p>
+      <p class="text-link"><a href="index.html" class="link">Повернутися на головну</a></p>
+    </div>
+    
+  </div>
+</body>
+</html>
+
+
+
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #7d7b7b, #211f1f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+.form-box {
+  width: 350px;
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+.btn {
+  padding: 12px;
+  background: #2575fc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #1a5bb8;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-link {
+  margin-top: 20px;
+  text-align: center;
+  color: #555;
+}
+
+.link {
+  color: #2575fc;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+
+.register-box .btn {
+  margin-bottom: 20px;
+}
+
+
+.login-box {
+  animation: fadeInLeft 0.5s ease;
+}
+
+.register-box {
+  animation: fadeInRight 0.5s ease;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>

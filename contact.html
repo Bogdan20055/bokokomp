@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - BokoKomp</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <script src="auth.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <div class="containers">
+            <a href="index.html">
+                <img src="logo.png" alt="Логотип" class="logo">
+            </a>
+            <div class="text">
+                <h1>Контакти</h1>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="configurator.html" class="nav-link">Конфігуратор</a>
+        <a href="contact.html" class="nav-link">Контакти</a>
+        <a href="basket.html" class="nav-link">Корзина</a>
+
+        <a href="login.html" id="login-button" class="nav-link">Увійти</a>
+<div class="user-menu">
+    <div id="dropdown-menu" class="dropdown-menu">
+        <a href="#" id="logout-button" class="nav-link">Вийти</a>
+    </div>
+</div>
+
+
+    </nav>
+
+
+    <div class="container">
+        <div class="contact-info">
+            <p>Телефон: +38 (066) 043 4306</p>
+            <p>Email: bogdanbabiy007@gmail.com</p>
+            <p>Адреса: м. Івано-Франківськ, вул. Берегова 38а</p>
+        </div>
+
+        <div class="map">
+            <h2>Наше розташування</h2>
+            <iframe src="http://surl.li/rhrhqs" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="contact-info">
+            <h3>Ми працюємо</h3>
+            <h5>Будні</h5>
+            <p>з 9:00 по 20:00</p>
+            <h5>Вихідні</h5>
+            <p>з 10:00 по 18:00</p>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>BokoKomp &copy; 2024</p>
+    </footer>
+
+</body>
+</html>
+
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header .containers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .text h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #333;
+    padding: 10px;
+    gap: 10px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 18px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.map {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+}
+
+.user-menu {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+#login-button {
+  background-color: #333;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 80px;
+  max-height: 150px;
+  overflow-y: auto;
+  top: 50px;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .contact-info {
+        font-size: 16px;
+    }
+
+    .map iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .contact-info {
+        font-size: 14px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .map iframe {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    .contact-info p {
+        font-size: 12px;
+    }
+
+    nav {
+        gap: 0;
+    }
+
+    .map iframe {
+        height: 200px;
+    }
+}
+
+</style>
+
+<script>
+
+</script>

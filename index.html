@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комп'ютерний магазин "BokoKomp"</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <header>
+        <div class="containers">
+            <a href="index.html">
+                <img src="logo.png" alt="Логотип" class="logo">
+            </a>
+            <div class="text">
+                <h1>Комп'ютерний магазин "BokoKomp"</h1>
+                <p>Все для вашого ідеального ПК та технічних потреб</p>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">Головна</a>
+        <a href="configurator.html" class="nav-link">Конфігуратор</a>
+        <a href="contact.html" class="nav-link">Контакти</a>
+        <a href="basket.html" class="nav-link">Корзина</a>
+        <a href="login.html" id="login-button" class="nav-link">Увійти</a>
+        <div class="user-menu">
+            <div id="dropdown-menu" class="dropdown-menu">
+                <a href="#" id="logout-button" class="nav-link">Вийти</a>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="container">
+        <section class="intro" id="about">
+            <h1>Ласкаво просимо до "BokoKomp"</h1>
+            <p>Ми пропонуємо новітні комп'ютери, аксесуари та комплектуючі для будь-яких потреб — від геймерських ПК до професійного обладнання.</p>
+        </section>
+        <section class="categories" id="categories">
+            <div class="category">
+                <h2>Комп'ютери</h2>
+                <img src="PC1.jpg" alt="Комп'ютери">
+                <p>Великий вибір готових рішень для роботи та розваг.</p>
+                <button onclick="location.href='computers.html'">Детальніше</button>
+            </div>
+            <div class="category">
+                <h2>Аксесуари</h2>
+                <img src="PC3.jpg" alt="Аксесуари">
+                <p>Миші, клавіатури, монітори та багато іншого.</p>
+                <button onclick="location.href='components.html'">Детальніше</button>
+            </div>
+            <div class="category">
+                <h2>Комплектуючі</h2>
+                <img src="PC2.jpg" alt="Комплектуючі">
+                <p>Процесори, відеокарти, жорсткі диски та інші деталі.</p>
+                <button onclick="location.href='componenty.html'">Детальніше</button>
+            </div>
+        </section>
+    </div>
+
+    <div id="hello">
+        <section class="hello" id="hi">
+            <h1>Коротко про нас</h1>
+            <p>Ми BokoKomp — нова мережа магазинів, що спеціалізується на зборі комп'ютерів та комплектуючих і аксесуарів для ПК. Ми пропонуємо широкий асортимент відеокарт, процесорів, материнських плат, периферії та сучасних аксесуарів, забезпечуючи ідеальні рішення для ігрових та професійних робочих станцій. В BokoKomp клієнти можуть знайти продукцію від провідних брендів, консультації від професіоналів і повну підтримку в системі збору, яка відповідає їхнім потребам.</p>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <p>Контакти: +38 (066) 043 4306 | Email: bogdanbabiy007@gmail.com</p>
+            <p>Адреса: м. Івано-Франківськ вул. Берегова 38а</p>
+            <p>BokoKomp &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script>
+       const loginButton = document.getElementById('login-button');
+const dropdownMenu = document.getElementById('dropdown-menu');
+const logoutButton = document.getElementById('logout-button');
+
+fetch('session_handler.php')
+  .then(response => response.json())
+  .then(data => {
+                if (data.user_name) {
+                    loginButton.textContent = data.user_name; 
+                    loginButton.classList.add('logged-in');
+                    dropdownMenu.style.display = 'none'; 
+                } else {
+                    loginButton.textContent = 'Увійти';
+                    loginButton.classList.remove('logged-in');
+                    loginButton.addEventListener('click', () => {
+                        window.location.href = 'login.html';
+                    });
+                }
+            })
+            .catch(error => console.error('Помилка перевірки авторизації:', error));
+
+            loginButton.addEventListener('mouseover', () => {
+          if (loginButton.classList.contains('logged-in')) {
+              dropdownMenu.style.display = 'block';
+          }
+      });
+
+      loginButton.addEventListener('mouseout', () => {
+          setTimeout(() => {
+              if (!dropdownMenu.matches(':hover')) {
+                  dropdownMenu.style.display = 'none';
+              }
+          }, 200);
+      });
+
+      dropdownMenu.addEventListener('mouseleave', () => {
+          dropdownMenu.style.display = 'none';
+      });
+
+        logoutButton.addEventListener('click', () => {
+            fetch('logout.php')
+                .then(() => {
+                    loginButton.textContent = 'Увійти'; 
+                    loginButton.classList.remove('logged-in');
+                    dropdownMenu.style.display = 'none'; 
+                    window.location.reload(); 
+                })
+                .catch(error => console.error('Помилка виходу:', error));
+        });
+    </script>
+</body>
+</html>
